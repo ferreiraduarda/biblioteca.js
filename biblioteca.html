@@ -2,18 +2,33 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Online</title>
+    <title>Biblioteca</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
-<body>        
-    <header>
-        <div class="logo">Logo</div>
-        <div class="perfil">Perfil</div>
-    </header>
-    <div class="pesquisa">
-        <input type="search" placeholder="Pesquisar livros...">Pesquisa
+<body>
+
+<header class="topbar">
+    <div class="logo">LOGO</div>
+    <div class="perfil">👤 Perfil</div>
+</header>
+
+<section class="search-area">
+    <input type="text" id="searchInput" placeholder="Pesquisa..." />
+    <button id="filterBtn">Filtros</button>
+</section>
+
+<h1 class="titulo">LIVROS POPULARES:</h1>
+
+<section class="resultados-busca" id="resultadosBusca"></section>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span id="closeModal">✖</span>
+        <h2 id="modalTitulo"></h2>
+        <p id="modalDescricao"></p>
     </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

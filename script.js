@@ -1,9 +1,39 @@
 const livros = [
-    {titulo: "Dom Casmurro", disponivel: false, autor: "Machado de Assis", descricao: "Clássico de Machado de Assis.", imagem: "https://upload.wikimedia.org/wikipedia/commons/0/05/DomCasmurroMachadodeAssis.jpg"},
-    {titulo: "Harry Potter", disponivel: true, autor: "J.K. Rowling", descricao: "Livro de magia e aventura.", imagem: "https://upload.wikimedia.org/wikipedia/pt/3/3a/Harry_Potter_and_the_Deathly_Hallows_-_Part_2.jpg"},
-    {titulo: "Senhor dos Anéis", disponivel: true, autor: "J.R.R. Tolkien", descricao: "Fantasia épica.", imagem: "https://upload.wikimedia.org/wikipedia/pt/5/59/The_Lord_of_the_Rings_The_Two_Towers.jpg"},
-    {titulo: "O Pequeno Príncipe", disponivel: true, autor: "Antoine de Saint-Exupéry", descricao: "Livro filosófico.", imagem: "https://upload.wikimedia.org/wikipedia/pt/4/47/O-pequeno-pr%C3%ADncipe.jpg"},
-    {titulo: "Percy Jackson", disponivel: false, autor: "Rick Riordan", descricao: "Mitologia grega moderna.", imagem: "https://grafipel.com.br/wp-content/uploads/2026/03/00137958.jpg"}
+    {
+        titulo: "Dom Casmurro",
+        disponivel: false,
+        autor: "Machado de Assis",
+        descricao: "Clássico de Machado de Assis.",
+        imagem: "https://upload.wikimedia.org/wikipedia/commons/0/05/DomCasmurroMachadodeAssis.jpg"
+    },
+    {
+        titulo: "Harry Potter",
+        disponivel: true,
+        autor: "J.K. Rowling",
+        descricao: "Livro de magia e aventura.",
+        imagem: "https://upload.wikimedia.org/wikipedia/pt/3/3a/Harry_Potter_and_the_Deathly_Hallows_-_Part_2.jpg"
+    },
+    {
+        titulo: "Senhor dos Anéis",
+        disponivel: true,
+        autor: "J.R.R. Tolkien",
+        descricao: "Fantasia épica.",
+        imagem: "https://upload.wikimedia.org/wikipedia/pt/5/59/The_Lord_of_the_Rings_The_Two_Towers.jpg"
+    },
+    {
+        titulo: "O Pequeno Príncipe",
+        disponivel: true,
+        autor: "Antoine de Saint-Exupéry",
+        descricao: "Livro filosófico.",
+        imagem: "https://upload.wikimedia.org/wikipedia/pt/4/47/O-pequeno-pr%C3%ADncipe.jpg"
+    },
+    {
+        titulo: "Percy Jackson",
+        disponivel: false,
+        autor: "Rick Riordan",
+        descricao: "Mitologia grega moderna.",
+        imagem: "https://grafipel.com.br/wp-content/uploads/2026/03/00137958.jpg"
+    }
 ];
 
 const container = document.getElementById("resultadosBusca");
@@ -13,7 +43,7 @@ const modalDescricao = document.getElementById("modalDescricao");
 const closeModal = document.getElementById("closeModal");
 
 function exibirLivros(lista) {
-    container.innerHTML = ""; // Limpa a tela antes de renderizar
+    container.innerHTML = "";
 
     lista.forEach((livro) => {
         const card = document.createElement("div");
@@ -22,10 +52,15 @@ function exibirLivros(lista) {
         const titulo = document.createElement("h3");
         titulo.textContent = livro.titulo;
 
+        const autor = document.createElement("p");
+        autor.textContent = `Autor: ${livro.autor}`;
+        autor.classList.add("autor");
+
         const status = document.createElement("p");
         status.textContent = livro.disponivel ? "Disponível" : "Indisponível";
         status.classList.add("status");
         status.classList.add(livro.disponivel ? "disponivel" : "indisponivel");
+
 
         let capa;
         if (livro.imagem) {
@@ -57,10 +92,10 @@ function exibirLivros(lista) {
             modal.style.display = "block";
         });
 
-        // 3. Montagem
         card.appendChild(titulo);
+        card.appendChild(autor);
         card.appendChild(status);
-        card.appendChild(capa); // Adiciona a imagem ou a div com X
+        card.appendChild(capa);
         card.appendChild(btnAcao);
         card.appendChild(linkDesc);
 

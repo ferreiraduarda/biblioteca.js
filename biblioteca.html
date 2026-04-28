@@ -2,33 +2,31 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Biblioteca</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Online</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="topbar">
+        <div class="logo">LOGO</div>
+        <div class="perfil">👤 Perfil</div>
+    </header>
+    <section class="search-area">
+        <input type="text" id="searchInput" placeholder="Pesquisa..." />
+        <button id="filterBtn">Filtros</button>
+    </section>
 
-<header class="topbar">
-    <div class="logo">LOGO</div>
-    <div class="perfil">👤 Perfil</div>
-</header>
+    <h1 class="titulo">LIVROS POPULARES:</h1>
 
-<section class="search-area">
-    <input type="text" id="searchInput" placeholder="Pesquisa..." />
-    <button id="filterBtn">Filtros</button>
-</section>
+    <section class="resultados-busca" id="resultadosBusca"></section>
 
-<h1 class="titulo">LIVROS POPULARES:</h1>
-
-<section class="resultados-busca" id="resultadosBusca"></section>
-
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <span id="closeModal">✖</span>
-        <h2 id="modalTitulo"></h2>
-        <p id="modalDescricao"></p>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span id="closeModal">✖</span>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalDescricao"></p>
+        </div>
     </div>
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>

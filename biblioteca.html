@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Online</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
+
     <header class="topbar">
-        <div class="logo">LOGO</div>
+        <div class="logo">
+            <img src="logo.png" alt="">
+            <span class="span1">BIBLIOTECA </span>
+            <span class="span2">COMUNITÁRIA</span>
+        </div>
+
         <div class="perfil">👤 Perfil</div>
     </header>
+
     <section class="search-area">
         <input type="text" id="searchInput" placeholder="Pesquisa..." />
         <button id="filterBtn">Filtros</button>
@@ -24,9 +32,20 @@
         <div class="modal-content">
             <span id="closeModal">✖</span>
             <h2 id="modalTitulo"></h2>
+            <p><strong>Autor:</strong> <span id="modalAutor"></span></p>
+            <p><strong>Lançamento:</strong> <span id="modalAno"></span></p>
+            <p><strong>Nota:</strong> ⭐ <span id="modalNota"></span></p>
+
+            <hr>
+
             <p id="modalDescricao"></p>
         </div>
     </div>
-<script src="script.js"></script>
+
+    <footer>
+        <p class="copyright">© 2026 Biblioteca Comunitária. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
